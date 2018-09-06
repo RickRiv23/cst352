@@ -30,3 +30,16 @@ footer{
     font-size: 1.5;
     color: pink;
 }
+
+table{
+    margin: 0px auto;
+}
+
+td strong{
+    color: pink;
+}
+
+td{
+    padding-right: 10px;
+    font-size: 1.3;
+}
