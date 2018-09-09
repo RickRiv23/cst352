@@ -3,7 +3,7 @@ body {
     color: grey;
 }
 
-header, main, nav, footer, #content, #table_content {
+header, main, nav, footer, #content{
     text-align: center;
     margin: 0 auto;
     width: 850px;
