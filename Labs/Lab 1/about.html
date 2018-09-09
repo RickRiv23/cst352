@@ -5,20 +5,22 @@
         <title>ABOUT Rick Rivera</title>
         <style>
             body {
-                background-color: black;
+                background-color: rgb(106, 164, 211);
             }
         </style>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     </head>
     <!-- close head -->
     
     
     <!-- Body; holds content in div -->
     <body style="background-color:black; color:white">
-        <header>
+        <header style="font-family: 'Pacifico', cursive">
             <h1>ABOUT ME</h1>
         </header>
         <nav>
+            <hr width="40%"/>
             <a href="index.html">HOME</a>
             <a href="about.html"><strong>ABOUT</strong></a>
             <a href="contact.html">CONTACT</a>
@@ -29,7 +31,7 @@
         <!-- div with id="content" will hold my table and all
             text/visual content for this page
         -->
-        <div id="content">
+        <div id="table_content">
             
             <!-- table below will show my experience -->
             <table>
@@ -57,10 +59,20 @@
             
             <!-- Unorganized list of my memes -->
             <ul>
-                <li>Sports: I've been playing basketball since I was 12, and recently picked up soccer.</li>
-                <li>Video Games: I am an avid FIFA player... bit of an addict at times.</li>
-                <li>Creative: I enjoy creating everything from photo and video to, now, web and graphic visuals.</li>
+                <li><span class="hobby">Sports</span>: I've been playing basketball since I was 12, and recently picked up soccer.</li>
+                <li><span class="hobby">Video Games</span>: I am an avid FIFA player... bit of an addict at times.</li>
+                <li><span class="hobby">Creative</span>: I enjoy creating everything from photo and video to, now, web and graphic visuals.</li>
             </ul>
         </div>
+        
+        <footer>
+            <figure id="csumb">
+                <img src="/../../cst352/csumb_logo.jpg" alt="CSUMB Logo" />
+            </figure>
+            <hr>
+            CST352. 2018&copy;RickRivera<br />
+            <strong>DISCLAIMER</strong>: this website is a <strong>meme</strong>.<br />
+            It is intended for academic use only.<br />
+        </footer>
     </body>
 </html>
