@@ -17,7 +17,7 @@
                 
                 <?php
                     $rand = rand(0,255);
-                     echo "background-color: rgb($rand, $rand, 211, .6);";
+                     echo "background-color: rgb($rand, $rand, $rand, .6);";
                 ?>
                 padding-top: 150px;
             }
