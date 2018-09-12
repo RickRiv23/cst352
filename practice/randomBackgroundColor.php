@@ -16,8 +16,10 @@
             body{
                 
                 <?php
-                    $rand = rand(0,255);
-                     echo "background-color: rgb(110, $rand, 211, .6);";
+                    $red = rand(0,255);
+                    $green = rand(0,200);
+                    $blue = rand(0,250);
+                     echo "background-color: rgb($red, $green, $blue, .6);";
                 ?>
                 padding-top: 150px;
             }
