@@ -15,6 +15,8 @@
                     break;
             case 2: $symbol = "lemon";
                 break;
+            case 3: $symbol = "bar";
+                break;
         }
         
         echo "<img id='reel$i' src='img/$symbol.png' alt='$symbol' title='".ucfirst($symbol)."' width='70' />";
@@ -32,9 +34,13 @@
                     break;
                 case 2: $totalPoints = 250;
                     break;
+                case 3: $totalPoints = 900;
+                    break;
             }
             echo "<h2>You won $totalPoints points!</h2>";
-        } else{
+        } else if($randValue1 == 3 && $randValue2 == 3 && $randValue3 == 3){ 
+            echo '<h2>You won 900 points</h2>';
+        }else{
             echo "<h2>Try Again!</h2>";
         }
         echo '</div>';
@@ -42,7 +48,7 @@
     
     function play(){
         for($i=0; $i<4; $i++){
-            ${"randValue" . $i} = rand(0,2);
+            ${"randValue" . $i} = rand(0,3);
             displaySymbol(${"randValue" . $i}, $i);
         }
         displayPoints($randValue1, $randValue2, $randValue3);
