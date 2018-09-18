@@ -1,27 +1,56 @@
 body{
-    background-color: rgb(106, 164, 211) !important;
+    background-color: rgba(106, 164, 211, 0.8) !important;
     font-family: 'Comfortaa', cursive;
+    color: white;
 }
 
 header{
     font-family: 'Comfortaa', cursive;
-    
+    font-size: 2.3em;
 }
 
-nav{
-    font-size: 1em;
+nav a{
+    color: white;
+    font-size: 1.7em;
+    padding: 5px 0px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+nav a:hover{
+    font-size: 2em;
+    transition: 0.4s;
 }
 
 .selected{
-    font-size: 1.3em;
+    font-size: 2em;
+}
+.selected:hover{
+    font-size: 1.9em;
+    transition: 0.4s;
 }
 
 .flex-container{
+    justify-content: center;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding: 10px 30px;
     
 }
 
+.flex-container div{
+    text-align: center;
+    margin: 30px;
+}
+
+.flex-container_text{
+    font-size: 1.5em;
+    
+}
+
+#source{
+    color: white;
+}
