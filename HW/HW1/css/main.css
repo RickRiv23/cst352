@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(106, 164, 211) !important;
+    font-family: 'Comfortaa', cursive;
+}
+
+header{
+    font-family: 'Comfortaa', cursive;
+    
+}
+
+nav{
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.selected{
+    font-size: 1.3em;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+
