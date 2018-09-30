@@ -62,9 +62,9 @@ function winner($p1, $p2){
                 font-style: strong;
                 font-size: 60px;
                 <?php
-                    $red = rand(0,255);
-                    $green = rand(0,200);
-                    $blue = rand(0,250);
+                    $red = rand(100,255);
+                    $green = rand(100,200);
+                    $blue = rand(100,250);
                      echo "color: rgb($red, $green, $blue, 1);";
                 ?>
         </style>
