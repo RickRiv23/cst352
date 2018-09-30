@@ -34,18 +34,17 @@ function hand(){
         $handVal += $cardVal;
     }
     
-    echo "Points: $handVal";
+    echo "<h3>Points: $handVal</h3>";
     $totalPoints += $handVal;
-    echo $totalPoints;
-    
     return $aceCount;
 }
 
 function winner($p1, $p2){
+    global $totalPoints;
     if($p1 > $p2){
-        echo "<br/><br/>You win $totalPoints!";
+        echo "<br/><br/>You win $totalPoints Points!";
     }elseif($p1 < $p2){
-        echo "<br/><br/>PC wins $totalPoints!";
+        echo "<br/><br/>PC wins $totalPoints Points!";
     }else{
         echo '<br/><br/>Tie!';
     }
@@ -78,11 +77,11 @@ function winner($p1, $p2){
         
         <div class="game"><?php
         
-        echo 'You: ';
+        echo '<h3>You: </h3>';
         $p1 = hand();
         echo '<br/><br/>';
         
-        echo 'You: ';
+        echo '<h3>PC: </h3>';
         $p2= hand();
         echo '<br/><br/>';
         
