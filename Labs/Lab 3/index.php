@@ -2,12 +2,14 @@
 
 $deck = range(1, 52);
 $suit = array("clubs", "spades", "hearts", "diamonds");
+$totalPoints = 0;
+
 shuffle($deck);
 
 
 function hand(){
     // $points = 0;
-    global $deck, $suit;
+    global $deck, $suit, $totalPoints;
     $aceCount = 0;
     $handVal = 0;
     
@@ -33,8 +35,20 @@ function hand(){
     }
     
     echo "Points: $handVal";
+    $totalPoints += $handVal;
+    echo $totalPoints;
     
     return $aceCount;
+}
+
+function winner($p1, $p2){
+    if($p1 > $p2){
+        echo "<br/><br/>You win $totalPoints!";
+    }elseif($p1 < $p2){
+        echo "<br/><br/>PC wins $totalPoints!";
+    }else{
+        echo '<br/><br/>Tie!';
+    }
 }
 ?>
     
@@ -44,6 +58,17 @@ function hand(){
         <meta charset="UTF-8" >
         <title>Lab 3: Ace Poker</title>
         <link rel="stylesheet" href="styles.css" type="text/css" />
+        <style type="text/css">
+            .winner{
+                font-style: strong;
+                font-size: 60px;
+                <?php
+                    $red = rand(0,255);
+                    $green = rand(0,200);
+                    $blue = rand(0,250);
+                     echo "color: rgb($red, $green, $blue, 1);";
+                ?>
+        </style>
     </head>
     <body>
         <div class="mainTitle">
@@ -55,23 +80,17 @@ function hand(){
         
         echo 'You: ';
         $p1 = hand();
-        // echo $p1;
         echo '<br/><br/>';
         
         echo 'You: ';
         $p2= hand();
-        // echo $p2;
         echo '<br/><br/>';
         
-        if($p1 > $p2){
-            echo '<br/><br/>You win!';
-        }elseif($p1 < $p2){
-            echo '<br/><br/>PC wins!';
-        }else{
-            echo '<br/><br/>Tie!';
-        }
-        
         ?></div>
+        
+        <h3 class="winner">
+            <?=winner($p1, $p2)?>
+        </h3>
     </body>
     <footer>
         <hr>
