@@ -40,7 +40,7 @@ function winner($p1, $p2){
 <html>
     <head>
         <meta charset="UTF-8" >
-        <title>Lab 3: Ace Poker</title>
+        <title>HW 2: Dice Game</title>
         <link rel="stylesheet" href="styles.css" type="text/css" />
         <style type="text/css">
             .winner{
@@ -54,7 +54,7 @@ function winner($p1, $p2){
     </head>
     <body>
         <div class="mainTitle">
-            <h1>Ace Poker</h1>
+            <h1>Dice</h1>
             <h2>The player with more points wins!</h2>
         </div>
         
