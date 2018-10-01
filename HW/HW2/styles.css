@@ -10,14 +10,13 @@ html{
 
 .userGame, .pcGame{
     text-align: center;
-    margin-left: 20%;
-    margin-right: 20%;
     width: 80%;
 }
 
 img{
     background-color: white;
-    transform: scale(0.3);
+    transform: scale(0.1);
+    margin: 0px;
 }
 
 h3{
