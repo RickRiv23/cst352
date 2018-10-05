@@ -1,0 +1,27 @@
+    body{
+        opacity:0.9;
+        height: 100%;
+        text-align:center;
+        color:yellow;
+    }
+    
+    form{
+        width: 50%;
+        height: 300px;
+        margin:10px;
+    }
+    
+    input {
+        font-size: 2em !important;
+        color: black;
+        border-radius: 30px;
+    }
+    
+    #carousel-example-generic {
+         margin: 0 auto;   
+         width: 700px;
+    }
+    
+    h3{
+        margin: 50px auto;
+    }
