@@ -30,6 +30,18 @@
     }elseif(!isset($_GET['keyword']) || $_GET['keyword'] == "" || $_GET['keyword'] == null){
         $background = "img/sea.jpg";
     }
+    
+    
+    
+    // Checks if the user refreshed the page
+    
+    $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+
+    if($pageWasRefreshed ) {
+       $background = "img/sea.jpg";
+       $_GET['keyword'] = null;
+       $keyword = null;
+    }
 ?>
 
 
@@ -49,6 +61,8 @@
             
             .keyword{
                 font-size: 35px;
+                text-align: center;
+                border-radius: 10px;
             }
             
             #carouselExampleIndicators{
@@ -178,7 +192,7 @@
         
         <?php
             $background = "img/sea.jpg";
-        
+            $keyword = null;
         }       //  Close if
         ?>
         
