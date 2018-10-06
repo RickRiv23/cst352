@@ -3,11 +3,13 @@
 
     $background = "img/sea.jpg";
     
+    $keyword = $_GET['keyword'];
+    
     if (isset($_GET['keyword']) ){
         
         include 'api/pixabayAPI.php';
         
-        $keyword = $_GET['keyword'];
+        
         
         $layout = "horizontal";
         if(isset($_GET['layout'])){
@@ -25,6 +27,8 @@
         echo "You searched for: <b>$keyword</b>";
         
         shuffle($imageURLs);
+    }elseif(!isset($_GET['keyword']) || $_GET['keyword'] == "" || $_GET['keyword'] == null){
+        $background = "img/sea.jpg";
     }
 ?>
 
@@ -144,7 +148,7 @@
                 </ol>
                   <div class="carousel-inner">
                       <?php
-                      for($i=0;$i<10; $i++){
+                      for($i=0;$i<7; $i++){
                           
                           echo "<div class='carousel-item ";
                           echo ($i == 0)?" active ":"";
@@ -165,12 +169,18 @@
             </div>
         
         <?php
-        }       //  Closes if statement
+        }else{
         ?>
         
-        <div class="footer">
-            <h3>Type a keyword or select a category</h3>
-        </div>
+            <div class="footer">
+                <h3>Type a keyword or select a category</h3>
+            </div>
+        
+        <?php
+            $background = "img/sea.jpg";
+        
+        }       //  Close if
+        ?>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
