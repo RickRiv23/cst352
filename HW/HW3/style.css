@@ -1,0 +1,78 @@
+html{
+    text-align: center;
+    margin: 0px auto;
+    height: 100vh;
+    width: auto;
+    background: url("disney-Tron.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: "Open Sans", sans-serif;
+}
+
+body{
+    color: white;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    padding: 20px;
+    margin: -20px;
+}
+
+form{
+    padding-top: 10px;
+    background-color: rgba(255,255,255,0.1);
+    width: 50%;
+    height: 250px;
+    border-radius: 20px;
+    margin: 1% auto;
+}
+
+span{
+    color: rgb(118,214,214);
+}
+
+.enterValue{
+    font-weight: bold;
+}
+
+.enterValue input{
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(0,0,0,0.85);
+    text-align: center;
+    color: rgb(118,214,214);
+    margin: 5px auto;
+}
+
+.radioBox{
+    background-color: rgba(0,0,0,0.85);
+    max-width: 40%;
+    margin: 0px auto;
+    border-radius: 10px;
+    text-align: left;
+    padding: 2% 10%;
+}
+
+.submitBtn{
+    margin-top: 5px;
+    max-width: 40%;
+    color: rgb(118,214,214);
+    background-color: black;
+}
+
+.diamondContainer{
+    background-color: rgb(118,214,214);
+    height: 60px;
+    text-align: center;
+    transform:rotate(45deg);
+	width:60px;
+	margin: auto;
+}
+
+#result{
+    display: table-cell;
+    height: 60px;
+    transform: rotate(-45deg);
+    vertical-align: middle;
+	width:60px;
+}
