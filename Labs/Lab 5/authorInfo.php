@@ -20,7 +20,7 @@ function displayAuthorInfo(){
   echo "<h4 class='authorInfo'>Bio: " . $record['bio'] . "</h4><br>";
   echo "<p class='authorInfo'>Day of Birth: " . $record['dob'] . "</p><br>";
   echo "<p class='authorInfo'>Day of Dead: ". $record['dod'] . "</p><br>";
-  echo "<img src='".$record['picture']."' alt='"$record['firstName'] . "  " . $record['lastName']"' height='100' width='100'></img><br>";
+  echo "<img src='".$record['picture']."' alt='Author Picture' height='100' width='100'></img><br>";
  
 }
 
