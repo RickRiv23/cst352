@@ -1,0 +1,21 @@
+html{
+    font-family: sans-serif;
+    text-align: center;
+    background: black;
+    color: white;
+}
+
+a{
+    color: grey;
+    text-decoration: none;
+}
+a:hover{
+    transition: 0.7s;
+    color: orange;
+    transform: scale(1.5);
+}
+
+iframe{
+    width: 80%;
+    margin: 0px auto;
+}

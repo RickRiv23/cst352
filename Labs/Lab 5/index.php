@@ -58,6 +58,7 @@
     <head>
         <title>Random Quotes</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css" type="text/css" />
         
     </head>
     
@@ -67,11 +68,14 @@
         <h3>RANDOM QUOTE</h3>
         
         <div>
+            
             <?= display_rand() ?>
         </div>
         
         <br>
         
-        <iframe name="authorInfo" frameborder="0" width="600" height="300"> </iframe>
+        
+        
+        <iframe name="authorInfo" frameborder="0" width="600" height="800" src="authorInfo.php"> </iframe>
     </body>
 </html>
