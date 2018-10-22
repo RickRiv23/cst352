@@ -1,5 +1,5 @@
 <?PHP
-    include '../../../SQLConnection.php';
+    include '../../SQLConnection.php';
     $dbname = "quotes";
     $dbConn = getConnection($dbname);
     
