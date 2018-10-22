@@ -47,7 +47,7 @@
     }
     
     function play(){
-        for($i=0; $i<4; $i++){
+        for($i=1; $i<4; $i++){
             ${"randValue" . $i} = rand(0,3);
             displaySymbol(${"randValue" . $i}, $i);
         }
