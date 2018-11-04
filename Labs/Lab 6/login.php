@@ -2,6 +2,14 @@
 <html>
     <head>
         <title>Lab 6</title>
+        <style type="text/css">
+            html{
+                text-align: center;
+            }
+            .error{
+                color: red;
+            }
+        </style>
     </head>
     <body>
         <h1>Admin Login</h1>
@@ -15,6 +23,16 @@
             
         </form>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <div class="error">
+        <?php
+        
+        if(isset($_SESSION['error'])) {
+            
+            echo $_SESSION['error'];
+            unset($_SESSION['error']);
+        }
+        
+        ?>
+        </div>
     </body>
 </html>
