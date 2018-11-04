@@ -8,8 +8,7 @@ if (!isset($_SESSION['adminName'])) { //validates whether the admin has logged i
 }
 
 include '../../SQLConnection.php';
-$dbname = "quotes";
-$dbConn = getConnection($dbname);
+$dbConn = getConnection("quotes");
 
 $sql = "DELETE FROM q_author WHERE authorId = " . $_GET['authorId'];
 $stmt = $dbConn->prepare($sql);

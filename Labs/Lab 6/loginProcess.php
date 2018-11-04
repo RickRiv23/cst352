@@ -23,9 +23,8 @@
  $record = $stmt->fetch(PDO::FETCH_ASSOC);
  
  //print_r($record);
- if (empty($record) || empty($username) || empty($password)){
-     
-     $_SESSION["error"] = "ERROR: Incorrect USERNAME or PASSWORD";
+if (empty($record)){
+      $_SESSION["error"] = "ERROR: Invalid Username or Password";
      header("location: login.php");
      exit();
      

@@ -1,8 +1,17 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['adminName'])) {
+    
+    header("Location: login.php");
+    
+}
+
+
 
 include '../../SQLConnection.php';
-$dbname = "quotes";
-$dbConn = getConnection($dbname);
+$dbConn = getConnection("quotes");
+
 
 function getAuthorInfo() {
     global $dbConn;
@@ -16,6 +25,8 @@ function getAuthorInfo() {
     
     
 }
+
+
 
 if (isset($_GET['updateAuthorForm'])) { // User submitted the form
     
@@ -44,7 +55,11 @@ if (isset($_GET['updateAuthorForm'])) { // User submitted the form
     $stmt = $dbConn->prepare($sql);
     $stmt->execute($np);
     
-    echo "Author info was updated!";
+    // echo "Author info was updated!";
+    header("Location: main.php"); 
+    
+     echo "<script> alert('Author info was updated!'); </script>";
+     echo "<script>setTimeout(\"location.href = 'login.php';\",100);</script>";
     
 }
 
@@ -65,12 +80,22 @@ if (isset($_GET['authorId'])) {
 <html>
     <head>
         <title> Update Author </title>
+        <style type="text/css">
+            html{
+                text-align: center;
+            }
+            form{
+                width: 60%;
+                margin: 0px auto;
+            }
+        </style>
     </head>
     <body>
         
         <h1> Updating Author Info </h1>
         
           <form>
+            <input type="hidden" name="authorId" value="<?= $authorInfo['authorId'] ?>" />
             First Name: <input type="text" name="firstName" value="<?= $authorInfo['firstName'] ?>" /> <br />
             Last Name: <input type="text" name="lastName"   value="<?= $authorInfo['lastName'] ?>"/> <br />
             Gender: 
@@ -96,15 +121,15 @@ if (isset($_GET['authorId'])) {
             Country: <input type="text" name="country"   value="<?= $authorInfo['country'] ?>"/> <br>
             Profession: <input type="text" name="profession" value="<?= $authorInfo['profession'] ?>"/> <br>
             
-            Image URL: <input type="text" name="imageUrl" value="<?= $authorInfo['picture'] ?>" size="40"/><br>
-            Bio: 
+            Image URL: <input type="text" name="imageUrl" value="<?= $authorInfo['picture'] ?>" size="40"/><br><br>
+            Bio: <br>
             <textarea name="bio" cols="50" rows="5"/> <?= $authorInfo['bio'] ?> </textarea>
             
             <br>
 
             <input type="submit" value="Update Author" name="updateAuthorForm" />
         </form>
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     </body>
 </html>
