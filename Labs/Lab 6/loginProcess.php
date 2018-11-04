@@ -20,21 +20,21 @@ session_start();
          
          
 //  This command will prevent SQL injection and true pass hacking
- $namedParameters = array();
- $namedParameters[":username"] = $username;
- $namedParameters[":password"] = $password;
- 
- $sql_command = "SELECT * 
+ $sql = "SELECT * 
          FROM q_admin 
-         WHERE username = :username 
+         WHERE username = :u;
          AND   password = :password ";
 
+ $namedParameters = array();
+ $namedParameters[":u"] = $username;
+ $namedParameters[":password"] = $password;
+
 
  
-//  echo $sql;
+ echo $sql;
  
- $statement = $dbConn->prepare($sql_command);
- $statement->execute();
+ $statement = $dbConn->prepare($sql);
+ $statement->execute($namedParameters);
  $record = $statement->fetch(PDO::FETCH_ASSOC); //we're expecting just one record
  
 //  print_r($record);
