@@ -22,7 +22,7 @@ session_start();
 //  This command will prevent SQL injection and true pass hacking
  $sql = "SELECT * 
          FROM q_admin 
-         WHERE username = :u;
+         WHERE username = :u
          AND   password = :password ";
 
  $namedParameters = array();
