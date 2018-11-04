@@ -1,39 +1,52 @@
 <?php
 
+session_start();
 
-if (isset($_GET['addAuthorForm'])) {  //form has been submitted!
+if (!isset($_SESSION['adminName'])) {
     
-    echo "First Name: "  . $_GET['firstName'];    
+    header("Location: login.php");
     
-    $firstName = $_GET['firstName'];
-    $lastName = $_GET['lastName'];
-    $gender = $_GET['gender'];
-    $dob = $_GET['dob'];
-    $dod = $_GET['dod'];
-    $country = $_GET['country'];
-    $profession = $_GET['profession']
-    $image = $_GET['image'];
-    $bio = $_GET['bio'];
+}
+
+if (isset($_GET['addAuthorForm'])) {  //checks whether the form has been submitted
+
+ include '../../SQLConnection.php';
+ $dbConn = getConnection("quotes");
     
     
-    $sql = "INSERT INTO q_author (firstName, lastName, gender, dob, dod, country, profession, picture, bio) 
+  $firstName = $_GET['firstName'];    
+  $lastName = $_GET['lastName'];
+  $gender = $_GET['gender'];
+  $dob = $_GET['dob'];
+  $dod = $_GET['dod'];
+  $country = $_GET['country'];
+  $profession = $_GET['profession'];
+  $imageUrl = $_GET['imageUrl'];
+  $bio = $_GET['bio'];
+  
+  
+  $sql = "INSERT INTO q_author (firstName, lastName, gender, dob, dod, country, profession, picture, bio) 
                  VALUES ( :fn, :lastName, :gender, :dob, :dod, :country, :profession, :picture, :bio);";
                  
-    $namedParameters = array();
-    $namedParameters[':fn'] = $firstName;
-    $namedParameters[':lastName'] = $lastName;
-    $namedParameters[':gender'] = $gender;
-    $namedParameters[':dob'] = $dob;
-    $namedParameters[':dod'] = $dod;
-    $namedParameters[':country'] = $country;
-    $namedParameters[':profession'] = $profession;
-    $namedParameters[':picture'] = $imageUrl;
-    $namedParameters[':bio'] = $bio;
-    
-    $stmt = $dbConn->prepare($sql);                 
-    $stmt->execute($namedParameters); //This will insert the record!
-    
-    echo "Author was added!";
+  $namedParameters = array();
+  $namedParameters[':fn'] = $firstName;
+  $namedParameters[':lastName'] = $lastName;
+  $namedParameters[':gender'] = $gender;
+  $namedParameters[':dob'] = $dob;
+  $namedParameters[':dod'] = $dod;
+  $namedParameters[':country'] = $country;
+  $namedParameters[':profession'] = $profession;
+  $namedParameters[':picture'] = $imageUrl;
+  $namedParameters[':bio'] = $bio;
+
+  $stmt = $dbConn->prepare($sql);                 
+  $stmt->execute($namedParameters); //This will insert the record!
+  
+  echo "Author was added!";
+  
+  sleep(10);
+  header("Location: main.php");
+ 
 }
 
 
@@ -43,6 +56,15 @@ if (isset($_GET['addAuthorForm'])) {  //form has been submitted!
 <html>
     <head>
         <title> Admin: Add New Author </title>
+        <style type="text/css">
+            html{
+                text-align: center;
+            }
+            form{
+                width: 60%;
+                margin: 0px auto;
+            }
+        </style>
     </head>
     <body>
 
@@ -60,10 +82,15 @@ if (isset($_GET['addAuthorForm'])) {  //form has been submitted!
             Day of birth: <input type="text" name="dob"/> <br />
             Day of death: <input type="text" name="dod"/> <br />
             Country: <input type="text" name="country"/> <br>
-            Image URL: <input type="text" name="image"/><br>
-            Bio: <input type="textarea" cols="50" rows="5" name="bio"/><br>
+            Profession: <input type="text" name="profession"/> <br>
+            
+            Image URL: <input type="text" name="imageUrl"/><br>
+            Bio: 
+            <textarea name="bio" cols="50" rows="5"/></textarea>
+            
+            <br>
 
-            <input type="submit" value="Add Author" name="addAuthorForm"/>
+            <input type="submit" value="Add Author" name="addAuthorForm" />
         </form>
         
     </body>
