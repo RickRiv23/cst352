@@ -6,13 +6,15 @@
     <body>
         <h1>Admin Login</h1>
         
-        <form action="loginProcess.php" method="post">        <!--Verifies that username and password are valid-->
-            <label for="username">Username:</label><input type="text" name="username"/><br>
-            <lable for="password">Password:</lable><input type="text" name="password"/>
+        <form action="loginProcess.php" method="post">
             
-            <br>
+            Username: <input type="text" name="username" /><br>
+            Password: <input type="password" name="password" /><br>
             
-            <input type="submit" value="Login"/>
+            <input type="submit" value="Login!">
+            
         </form>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </body>
 </html>

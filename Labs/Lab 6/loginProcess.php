@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 //verifies that username and password are valid
 
  include '../../SQLConnection.php';
@@ -6,19 +9,38 @@
 
  $username = $_POST['username'];
  $password = sha1($_POST['password']);
+ 
+ 
+ // This command works but will be easily hacked using true pass ('or 1=1 or')
+/* $sql_command = "SELECT * 
+         FROM q_admin 
+         WHERE username = '$username' 
+         AND   password = '$password' ";*/
+         
+         
+         
+//  This command will prevent SQL injection and true pass hacking
+ $namedParameters = array();
+ $namedParameters[":username"] = $username;
+ $namedParameters[":password"] = $password;
+ 
+ $sql_command = "SELECT * 
+         FROM q_admin 
+         WHERE username = :username 
+         AND   password = :password ";
 
- $sql = "SELECT * FROM q_admin WHERE username = '$username' AND password = '$password' ";
+
  
- echo $sql;
+//  echo $sql;
  
- $stmt = $dbConn->prepare($sql);
- $stmt->execute();
- $record = $stmt->fetch(PDO::FETCH_ASSOC); //we're expecting just one record
+ $statement = $dbConn->prepare($sql_command);
+ $statement->execute();
+ $record = $statement->fetch(PDO::FETCH_ASSOC); //we're expecting just one record
  
- print_r($record);
+//  print_r($record);
 
 if(empty($record)){
-    echo "Error: Wrong Username or Password!!!!!";
+    echo "Error: Invalid Username or Password";
 }else{
     $_SESSION['adminName'] = $record['firstName'] . " " . $record['lastName'];
     
