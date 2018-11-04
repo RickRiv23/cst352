@@ -5,7 +5,8 @@ session_start();
 //verifies that username and password are valid
 
  include '../../SQLConnection.php';
- $dbConn = getConnection("quotes");
+ $dbname = "quotes";
+ $dbConn = getConnection($dbname);
 
  $username = $_POST['username'];
  $password = sha1($_POST['password']);
@@ -31,16 +32,19 @@ session_start();
 
 
  
- echo $sql;
+//  echo $sql;
  
  $statement = $dbConn->prepare($sql);
  $statement->execute($namedParameters);
  $record = $statement->fetch(PDO::FETCH_ASSOC); //we're expecting just one record
  
-//  print_r($record);
+ print_r($record);
 
 if(empty($record)){
     echo "Error: Invalid Username or Password";
+    
+    echo "<script> alert('ERROR: Wrong Username or Password!!!'); </script>";
+    echo "<script>setTimeout(\"location.href = 'login.php';\",100);</script>"; 
 }else{
     $_SESSION['adminName'] = $record['firstName'] . " " . $record['lastName'];
     

@@ -1,7 +1,8 @@
 <?php
 
 include '../../SQLConnection.php';
-$dbConn = getConnection("quotes");
+$dbname = "quotes";
+$dbConn = getConnection($dbname);
 
 function getAuthorInfo() {
     global $dbConn;

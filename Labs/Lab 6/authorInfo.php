@@ -1,15 +1,12 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['adminName'])) {
     
     header("Location: login.php");
     
 }
-
 include '../../SQLConnection.php';
 $dbConn = getConnection("quotes");
-
 function getAuthorInfo() {
     global $dbConn;
     
@@ -19,16 +16,13 @@ function getAuthorInfo() {
     $record = $stmt->fetch(PDO::FETCH_ASSOC);
     
     return $record;
-
 }
-
 if (isset($_GET['authorId'])) {
     
   $authorInfo = getAuthorInfo();
   //print_r($authorInfo);
   
 }
-
 ?>
 
 <!DOCTYPE html>
