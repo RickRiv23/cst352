@@ -67,10 +67,11 @@ form{
     line-height: 20px;
 }
 
-.answer--wrapper > input{
+.answer--wrapper > label{
     border-radius: 10px;
     line-height: 20px;
     text-align: center;
+    margin-right: 5px;
 }
 
 .submitBtn{
