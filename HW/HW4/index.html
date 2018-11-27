@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Name that Meme</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="" type="text/css" /> 
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        
+        <script>
+        </script>
+    </head>
+    <body>
+        
+        <h3>Lets see if you can...</h3>
+        <h1>GUESS     THAT     MEME</h1>
+        <!--<h4>Correct answers will be in <span style="color: lightgreen;">green</span> and wrong answers will be in <span style="color:red;">red</span>.</h4>-->
+        
+        <form name="memeGame" onsubmit="return validateForm()">
+            
+            <div id="q1" class="question--wrapper">
+                <p class="question">Meme #1: What his famous phrase?</p>
+                <img class="question--img" src="https://i.kinja-img.com/gawker-media/image/upload/s--C7Y5qzOz--/c_scale,f_auto,fl_progressive,q_80,w_800/uxkkxcfhbuwqjixsk53f.png"></img>
+                <input type="text" id="answer1" name="answer1"/>
+                <h4 style="display:none" id="correctImg--1" class="correct"><img src="img/correct.png" width="20px" height="20px" />Correct</h4>
+                <h4 style="display:none" id="wrongImg--1" class="wrong"><img src="img/wrong.png" width="20px" height="20px" />Wrong</h4>
+                <h4 style="display: none" id="error--1">Please provide an appropriate response</h4>
+            </div>
+            
+            <br>
+            
+            <div id="q2" class="question--wrapper">
+                <p class="question">Meme #2: Who is this???</p>
+                <img class="question--img" src="https://img.buzzfeed.com/buzzfeed-static/static/2018-11/20/18/campaign_images/buzzfeed-prod-web-05/18-veces-en-las-que-el-meme-de-pikachu-fue-tan-ac-2-11110-1542757151-3_dblbig.jpg?downsize=336:*&output-format=auto&output-quality=auto"></img>
+                <div style="text-align: center;" class="answer--wrapper">
+                    <select id="answer2" name="answer2">
+                        <option value="">Select One</option>
+                        <option value="1">Raichu</option>
+                        <option value="2">Pichu</option>
+                        <option value="3">Pikachu</option>
+                        <option value="4">Vulpix</option>
+                    </select>
+                </div>
+                
+                <br>
+                
+                <h4 style="display:none" id="correctImg--2" class="correct"><img src="img/correct.png" width="20px" height="20px" />Correct</h4>
+                <h4 style="display:none" id="wrongImg--2" class="wrong"><img src="img/wrong.png" width="20px" height="20px" />Wrong</h4>
+                <h4 style="display: none" id="error--2">Please provide an appropriate response</h4>
+            </div>
+            
+            <br>
+            
+            <div id="q3" class="question--wrapper">
+                <p class="question">Meme #3: Who does Spiderman point at?</p>
+                <br>
+                <div class="answer--wrapper">
+                     <input type="radio" name="answer3" value="spiderman" id="Spiderman">
+                        <label for="Spiderman">Spiderman</label><br>
+                    <input type="radio" name="answer3" value="himself" id="himself">
+                        <label for="himself"> Himself</label> <br>
+                    <input type="radio" name="answer3" value="hulk" id="hulk">
+                        <label for="hulk">The Hulk</label> <br>
+                    <input type="radio" name="answer3" value="Me" id="me">
+                        <label for="me"> Me</label>
+                </div>
+                <br>
+                <h4 style="display:none" id="correctImg--3" class="correct"><img src="img/correct.png" width="20px" height="20px" />Correct</h4>
+                <h4 style="display:none" id="wrongImg--3" class="wrong"><img src="img/wrong.png" width="20px" height="20px" />Wrong</h4>
+                <h4 style="display: none" id="error--3">Please provide an appropriate response</h4>
+            </div>
+            
+            <br>
+                
+            <div id="q4" class="question--wrapper">
+                <p class="question">Meme #4: Have you seen him?</p>
+                <img class="question--img" src="https://i.redd.it/yeobho0bnu021.jpg"></img>
+                <br>
+                <div style="text-align: center" class="answer--wrapper">
+                    <input type="checkbox" name="answer4" value="yes" id="yes">
+                    <label for="yes">Now you have :)</label>
+                </div>
+                <br>
+                <h4 style="display:none" id="correctImg--4" class="correct"><img src="img/correct.png" width="20px" height="20px" />Correct</h4>
+                <h4 style="display:none" id="wrongImg--4" class="wrong"><img src="img/wrong.png" width="20px" height="20px" />Wrong</h4>
+                <h4 style="display: none" id="error--4">Please provide an appropriate response</h4>
+            </div>
+            
+            <br>
+            
+            <div id="q5" class="question--wrapper">
+                <p class="question">Meme #5: ...</p>
+                <img class="question--img" src="https://i.redd.it/po4waodmwt021.jpg"></img>
+                <br>
+                <div style="display: flex" class="answer--wrapper">
+                    <input type="radio" name="answer5" value="relatable" id="relatable">
+                    <label for="relatable">Can relate...</label>
+                    <input type="radio" name="answer5" value="wrong" id="wrong">
+                    <label for="wrong"> I don't get it...</label> <br>
+                </div>
+                <br>
+                <h4 style="display:none" id="correctImg--5" class="correct"><img src="img/correct.png" width="20px" height="20px" />I'm glad..</h4>
+                <h4 style="display:none" id="wrongImg--5" class="wrong"><img src="img/wrong.png" width="20px" height="20px" />HAVE YOU SEEN TOY STORY !!!!!</h4>
+                <h4 style="display: none" id="error--5">Please provide an appropriate response</h4>
+            </div>
+            
+            <br>
+            
+            <div id="q6" class="question--wrapper">
+                <p class="question">Meme #6: Would you agree?</p>
+                <img class="question--img" src="https://i.imgur.com/u47d9Uv.jpg"></img>
+                <br>
+                 <div class="answer--wrapper">
+                     Answer 'Yes' or 'No': <input type="text" id="answer6" name="answer6"/>
+                </div>
+                <br>
+                <h4 style="display:none" id="correctImg--6" class="correct"><img src="img/correct.png" width="20px" height="20px" />Same</h4>
+                <h4 style="display:none" id="wrongImg--6" class="wrong"><img src="img/wrong.png" width="20px" height="20px" />Ah</h4>
+                <h4 style="display: none" id="error--6">Please provide an appropriate response</h4>
+            </div><br>
+            
+            <input type="submit" value="Meme" class="submitBtn"/>
+        </form>
+        
+        <h2><span id="score"></span></h2>
+        
+        <script src="scripts.js"></script>
+    </body>
+</html>
