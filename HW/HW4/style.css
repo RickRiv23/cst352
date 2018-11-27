@@ -16,8 +16,13 @@ h1{
     position: relative;
 }
 
-label{
-    position: relative;
+/*label{*/
+/*    position: relative;*/
+/*}*/
+
+form{
+    width: 80%;
+    margin: 5px auto;
 }
 
 .correct{
