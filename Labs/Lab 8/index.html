@@ -149,35 +149,55 @@
         <form onsubmit="return validateForm()" action="signup.html">
             <fieldset>
                <legend>Sign Up</legend>
-                First Name:  <input type="text"><br> 
-                Last Name:   <input type="text"><br> 
-                Email:       <input type="text"><br> 
-                Phone Number:<input type="text"><br><br>
-                Zip Code:    <input id="zipCode" type="text"><br>
-                City: <span id="city"></span> 
-                <br>
-                Latitude: <span id="lat"></span>
-                <br>
-                Longitude: <span id="lon"></span>
+               <div class="personal">
+                    <span class="per1">First Name:  <input type="text"></span>
+                    <br> 
+                    <span class="per2">Last Name:   <input type="text"></span>
+                    <br> 
+                   <span class="per3"> Email:       <input type="text"></span>
+                    <br> 
+                    <span class="per4">Phone Number:<input type="text"></span>
+                </div>
+                
                 <br><br>
-                State: 
-                <select id="state">
-                    <option value="">Select One</option>
-                    <option value="ca"> California</option>
-                    <option value="ny"> New York</option>
-                    <option value="tx"> Texas</option>
-                    <option value="va"> Virginia</option>
-                </select>
                 
-                <br/>
+                <div>
+                    Zip Code:    <input id="zipCode" type="text"><br>
+                    City: <span id="city"></span> 
+                    <br>
+                    Latitude: <span id="lat"></span>
+                    <br>
+                    Longitude: <span id="lon"></span>
+                    <br><br>
+                    State: 
+                    <select id="state">
+                        <option value="">Select One</option>
+                        <option value="ca"> California</option>
+                        <option value="ny"> New York</option>
+                        <option value="tx"> Texas</option>
+                        <option value="va"> Virginia</option>
+                    </select>
+                    
+                    <br/>
+                    
+                    Select a County: <select id="county"></select>
+                </div>
                 
-                Select a County: <select id="county"></select><br>
+                <br>
                 
-                Desired Username: <input id="user" type="text"><span id="userError" class="error"></span><br>
+                <!--<div class="credentials">-->
+                    <p>Desired Username:</p> <input id="user" type="text"><span id="userError" class="error"></span>
+                    
+                    <br>
+                    
+                    <p>Password:</p> <input id="password" type="password"><span id="passwordError" class="error"></span>
+                   
+                    <br>
+                    
+                    <p>Type Password Again:</p> <input  id="passType" type="password"><span id="retypedError" class="error"></span>
+                <!--</div>-->
                 
-                Password: <input id="password" type="password"><span id="passwordError" class="error"></span><br>
-                
-                Type Password Again: <input  id="passType" type="password"><span id="retypedError" class="error"></span><br>
+                <br>
                 
                 <button type="submit" >Sign Up</button>
             </fieldset>

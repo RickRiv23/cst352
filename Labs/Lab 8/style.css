@@ -30,5 +30,27 @@ input, select, button{
 
 fieldset{
     border:none;
+    padding: inherit;
+    margin: 0px;
+}
+
+.personal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: end;
+}
+
+.personal > span > input{
+    width: 150px;
+    
+}
+
+.credentials{
+    height: 200px;
+}
+
+.cred1{
+    width: 400px;
 }
 
