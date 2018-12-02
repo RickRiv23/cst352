@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>AJAX: Sign Up Page</title>
+        
+        <link rel="stylesheet" href="style.css" type="text/css" />
+
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script>
+        
+        
+          $("document").ready( function(){
+              
+              $("#user").change(function() {
+                 
+                 
+                    $.ajax({
+
+                        type: "GET",
+                        url: "checkUsername.php",
+                        dataType: "json",
+                        data: { "username": $("#user").val() },
+                        success: function(data,status) {
+                        //alert(data);
+                        
+                        if(data == false) {
+                            alert("Username available");
+                        }
+                        else {
+                            alert("Username already taken");
+                        }
+                        
+                        },
+                        complete: function(data,status) { //optional, used for debugging purposes
+                        //alert(status);
+                        }
+                        
+                        });//ajax
+                 
+              });
+             
+              $("#state").change(function(){
+                 // alert($("#state").val());
+                  
+                  
+                        $.ajax({
+                        
+                        type: "GET",
+                        url: "http://itcdland.csumb.edu/~milara/ajax/countyList.php",
+                        dataType: "json",
+                        data: { "state":$("#state").val() },
+                        success: function(data,status) {
+                            //$("#county").html("<option>"+data[0].county+"</option>");                        
+                            //alert(data[0].county);
+                            $("#county").html("");
+                            for(var i=0; i<data.length; i++){
+                             $("#county").append("<option>"+data[i].county+"</option>");    
+                            
+                            }
+                        },
+                        complete: function(data,status) { //optional, used for debugging purposes
+                        //alert(status);
+                        }
+                        
+                        });//ajax
+              });//state change event
+
+             
+             
+               $("#zipCode").change( function(){
+                   
+                   //alert($("#zipCode").val());
+                   
+                    $.ajax({
+                    
+                    type: "GET",
+                    url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
+                    dataType: "json",
+                    data: { "zip": $("#zipCode").val() },
+                    success: function(data,status) {
+                      //alert(data.city);
+                      $("#city").html(data.city);
+                      $("#lat").html(data.latitude);
+                      $("#lon").html(data.longitude);
+                    },
+                    complete: function(data,status) { //optional, used for debugging purposes
+                    //alert(status);
+                    }
+
+                    });//ajax
+                   
+                  } );//zip event
+                  
+                  
+                  
+
+              
+          });//document.ready
+        
+        
+        
+            function validateForm() {
+                var validationConfirmation = true;
+                var username= $("#user").val();
+                var password = $("#password").val();
+                var pass2 = $("#passType").val();
+                
+                
+                if (username.length < 5){
+                    //alert("username must be at least 5 characters");
+                    $("#userError").html("username must be at least 5 characters");
+                    validationConfirmation = false;
+                    
+                };
+                if(password.length < 3)
+                {
+                    $("#passwordError").html("Password must have a minimum of 3 characters");
+                    validationConfirmation = false;
+                }
+                
+                if (password != pass2) {
+                    $("#retypedError").html("Password and retyped password must be the same");
+                    validationConfirmation = false;
+                    
+                }
+                
+                
+                return validationConfirmation;
+           
+            }
+            
+            
+            
+        </script>
+        <style type="text/css">
+            .error{
+                color:red;
+            }
+        </style>
+
+    </head>
+
+    <body>
+    
+       <h1> Sign Up Form </h1>
+    
+        <form onsubmit="return validateForm()" action="signup.html">
+            <fieldset>
+               <legend>Sign Up</legend>
+                First Name:  <input type="text"><br> 
+                Last Name:   <input type="text"><br> 
+                Email:       <input type="text"><br> 
+                Phone Number:<input type="text"><br><br>
+                Zip Code:    <input id="zipCode" type="text"><br>
+                City: <span id="city"></span> 
+                <br>
+                Latitude: <span id="lat"></span>
+                <br>
+                Longitude: <span id="lon"></span>
+                <br><br>
+                State: 
+                <select id="state">
+                    <option value="">Select One</option>
+                    <option value="ca"> California</option>
+                    <option value="ny"> New York</option>
+                    <option value="tx"> Texas</option>
+                    <option value="va"> Virginia</option>
+                </select>
+                
+                <br/>
+                
+                Select a County: <select id="county"></select><br>
+                
+                Desired Username: <input id="user" type="text"><span id="userError" class="error"></span><br>
+                
+                Password: <input id="password" type="password"><span id="passwordError" class="error"></span><br>
+                
+                Type Password Again: <input  id="passType" type="password"><span id="retypedError" class="error"></span><br>
+                
+                <button type="submit" >Sign Up</button>
+            </fieldset>
+        </form>
+    
+    </body>
+</html>
