@@ -1,0 +1,9 @@
+body {
+    text-align: center !important;
+}
+
+
+#carouselExampleIndicators{
+    width: 400px;
+    margin: auto;
+}
