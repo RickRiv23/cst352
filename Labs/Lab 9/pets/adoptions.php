@@ -99,11 +99,13 @@ function displayAllPets(){
           <div class="modal-body">
             <div id="petInfo">
                 <!-- this is an html element -->
-                <img id="petImg" src="" width="150"></img>
-                <span id="petDescription"></span> <br>
-                <span id="type"></span> <br>
-                <span id="breed"></span> <br>
-                <span id="color"></span> <br>
+                <img id="petImg" src="" width="150"></img><br>
+                <div class="petModal--info">
+                  <b>About</b>: <span id="petDescription"></span> <br>
+                  <b>Type</b>: <span id="type"></span> <br>
+                  <b>Breed</b>: <span id="breed"></span> <br>
+                  <b>Color</b>: <span id="color"></span> <br>
+                  </div>
                 
             </div>
           </div>
