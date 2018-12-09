@@ -1,6 +1,7 @@
 <?php 
 include '../../../SQLConnection.php';
-$dbConn = getConnection("pets");
+$dbname = "pets";
+$dbConn = getConnection($dbname);
 
 function displayAllPets(){
     global $dbConn;
@@ -45,7 +46,7 @@ function displayAllPets(){
   ?>
     <script>
         $(document).ready(function(){
-            $('.petLink').click(function(){
+            $('.pet').click(function(){
                 //alert( $(this).attr("id") );
                 
                 $('#petInfoModal').modal("show");
@@ -55,7 +56,7 @@ function displayAllPets(){
                     type: "GET",
                     url: "api/getPetInfo.php",
                     dataType: "json",
-                    data: { "id":$(this).attr("id") },
+                    data: { "id":$(this).find('.petLink').attr("id") },
                     success: function(data,status) {
                     // alert(data.description);
                     $("#petName").html(data.name);
@@ -79,8 +80,8 @@ function displayAllPets(){
     $pets = displayAllPets();
     
     foreach($pets as $pet) {
-        echo "Name: ". "<a href='#' class='petLink' id='". $pet["id"]. "'>" .$pet["name"]. "</a><br>";
-        echo "Type: " .$pet["type"]. "<br><br>" ;
+        echo "<div class='pet'><b>Name</b>: ". "<a href='#' class='petLink' id='". $pet["id"]. "'>" .$pet["name"]. "</a><br>";
+        echo "<b>Type</b>: " .$pet["type"]. "</div><br><br>" ;
     }
   ?>
   

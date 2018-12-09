@@ -1,9 +1,29 @@
 body {
     text-align: center !important;
+    background-color: rgba(0,0,0,0.3);
 }
 
 
 #carouselExampleIndicators{
     width: 400px;
     margin: auto;
+}
+
+.pet{
+    width: 50%;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.8);
+    margin: 0px auto;
+    color: white;
+    transition: 0.5s;
+}
+
+.pet:hover{
+    transform: scale(1.125);
+}
+
+.pet > a{
+    color: orange;
+    text-decoration: none;
+    cursor: pointer;
 }
