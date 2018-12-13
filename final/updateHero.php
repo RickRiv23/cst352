@@ -7,7 +7,7 @@ if (!isset($_SESSION['adminSesh'])) {
     
 }
 
-include '../sqlConnection.php';
+include '../SQLConnection.php';
 $dbConn = getConnection("heroes");
 
 

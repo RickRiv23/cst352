@@ -1,6 +1,6 @@
 <?php
     //include 'api/heroes.php';
-    include '../sqlConnection.php';
+    include '../SQLConnection.php';
     //session_start(); 
 
     $dbConn = getConnection("heroes");

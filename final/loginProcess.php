@@ -3,7 +3,7 @@ session_start();  //starts or resumes a session
 
 //verifies that username and password are valid
 
- include '../sqlConnection.php';
+ include '../SQLConnection.php';
  $dbConn = getConnection("heroes");
 
  $username = $_POST['username'];

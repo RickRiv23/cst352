@@ -1,30 +1,30 @@
 <?php
-session_start();
-include '../sqlConnection.php';
-$dbConn = getConnection("heroes");
-
-function displayAllHeroes() {
-    global $dbConn;
+    session_start();
+    include '../SQLConnection.php';
+    $dbConn = getConnection("heroes");
     
-$sql = "SELECT hero_id, name, fullName, universe
-        FROM Superheroes
-        ORDER BY fullName";
-        
-$stmt = $dbConn->prepare($sql);
-$stmt->execute();
-$heroes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-   foreach ($heroes as $hero) {
-        echo "<a   class='btn btn-primary' role='button' href='updateHero.php?hero_id=".$hero['hero_id']."'>Update</a> ";
-        echo "<form action='deleteHero.php' onsubmit='return confirmDelete()' >";
-        echo "<input type='hidden' name='hero_id' value='".$hero['hero_id']."'>";
-        echo "<button class='btn btn-outline-danger' type='submit'>Delete</button>";
-        echo "</form>";
-        echo "<a onclick='openModal()' target='heroModal' href='heroInfo.php?hero_id=".$hero['hero_id']."'>" . $hero['name'] . ", " . $hero['fullName'] . "</a>, ";
-        echo $hero['universe'] . "<br><br>";
-   }
-       
-}
+    function displayAllHeroes() {
+        global $dbConn;
+            
+        $sql = "SELECT hero_id, name, fullName, universe
+                FROM Superheroes
+                ORDER BY fullName";
+                
+        $stmt = $dbConn->prepare($sql);
+        $stmt->execute();
+        $heroes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        foreach ($heroes as $hero) {
+            echo "<a   class='btn btn-primary' role='button' href='updateHero.php?hero_id=".$hero['hero_id']."'>Update</a> ";
+            echo "<form action='deleteHero.php' onsubmit='return confirmDelete()' >";
+            echo "<input type='hidden' name='hero_id' value='".$hero['hero_id']."'>";
+            echo "<button class='btn btn-outline-danger' type='submit'>Delete</button>";
+            echo "</form>";
+            echo "<a onclick='openModal()' target='heroModal' href='heroInfo.php?hero_id=".$hero['hero_id']."'>" . $hero['name'] . ", " . $hero['fullName'] . "</a>, ";
+            echo $hero['universe'] . "<br><br>";
+       }
+           
+    }
 ?>
 
 <!DOCTYPE html>

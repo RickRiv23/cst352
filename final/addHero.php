@@ -10,7 +10,7 @@ if (!isset($_SESSION['adminSesh'])) {
 
 if (isset($_GET['addHeroForm'])) {  //checks whether the form has been submitted
 
- include '../sqlConnection.php';
+ include '../SQLConnection.php';
  $dbConn = getConnection("heroes");
     
   $name = $_GET['name'];  

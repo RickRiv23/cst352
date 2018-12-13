@@ -8,7 +8,7 @@ if (!isset($_SESSION['adminSesh'])) { //Valiadates whether admin logged in.
     
 }
 
-include '../sqlConnection.php';
+include '../SQLConnection.php';
 $dbConn = getConnection("heroes");
 
 $sql = "DELETE FROM Superheroes
