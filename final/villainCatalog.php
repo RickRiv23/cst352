@@ -28,38 +28,37 @@
         <link href="css/styles.css" rel="stylesheet" type="text/css" /> 
         <script>
             $(document).ready(function(){
-                $('.villImg').click(function(){
+                    $('.villImg').click(function(){
+                        // alert( $(this).attr("id") );
                     
-                
-                    $('#villInfoModal').modal("show");
+                        $('#villInfoModal').modal("show");
                     
-                    // alert( $(this).attr("id") );
-                    
-                    $.ajax({
+                        $.ajax({
+                                
+                            type: "GET",
+                            url: "api/getVillInfo.php",
+                            dataType: "json",
+                            data: { "id": $(this).attr("id") },
+                            success: function(data,status) {
+                                // alert(data);
+                                $("#villName").html(data.name);
+                                $("#realName").html(data.fullName);
+                                $("#gender").html(data.gender);
+                                $("#species").html(data.race);
+                                $("#power").html(data.powers);
+                                $("#universe").html(data.universe);
+                                $("#villDescription").html(data.bio);
+                                $("#villImg").attr("src", data.img);
+                               
+                            },
+                            complete: function(data,status) { //optional, used for debugging purposes
+                            //   alert(status);
+                            }
                             
-                        type: "GET",
-                        url: "api/getVillainInfo.php",
-                        dataType: "json",
-                        data: { "id": $(this).attr("id") },
-                        success: function(data,status) {
-                            // alert(data);
-                            $("#villName").html(data.name);
-                            $("#realName").html(data.fullName);
-                            $("#gender").html(data.gender);
-                            $("#species").html(data.race);
-                            $("#power").html(data.powers);
-                            $("#universe").html(data.universe);
-                            $("#heroDescription").html(data.bio);
-                            $("#heroImg").attr("src", data.img);
-                           
-                        },
-                        complete: function(data,status) { //optional, used for debugging purposes
-                            alert(status);
-                        }
-                        
-                    });//ajax
-                }); 
-            });
+                        });//ajax
+                    }); 
+              });
+            
         </script>
         
         <style>
@@ -87,10 +86,7 @@
             }
         </style>
     </head>
-    <body>
-        
-        <!--<script type="text/javascript" src="inc/villains.js"></script>-->
-        
+    <body >
     <div id="container">
         <div class="container-b">
         <div class="nav-container">
@@ -140,14 +136,14 @@
                   <div class="modal-body">
                     <div id="villInfo">
                         
-                     <img id="heroImg" src="" alt="Character Image" width="150"><br>
+                     <img id="villImg" src="" alt="Character Image" width="150"><br>
                      <div style="margin: 10px auto; background: whitesmoke; padding: 5px; border-radius: 8px;">
                          <b>Identity: </b><span id="realName"> </span> <br>
                          <b>Gender: </b><span id="gender"> </span> <br>
                          <b>Species: </b><span id="species" ></span> <br>
                          <b>Power: </b><span id="power"></span> <br>
                          <b>Universe: </b><span id="universe"></span> <br>
-                         <b>Biography: </b><span id="heroDescription"></span> <br>
+                         <b>Biography: </b><span id="villDescription"></span> <br>
                      </div>
                         
                     </div>
@@ -171,7 +167,7 @@
         </div>
     </div> 
 </div>    
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
