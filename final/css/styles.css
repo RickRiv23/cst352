@@ -1,0 +1,70 @@
+body {    
+    font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Acme', sans-serif;
+	font-size: 70px;
+	color: yellow;
+    text-shadow: 5px 1px #FF0000;
+}
+
+.jumbotron {
+    background-color: black;
+}
+
+h4 {
+    color: yellow;
+}
+
+#container {
+    padding-top: 150px;
+    padding-bottom: 5em;
+}
+.container-b {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    height: 200%;
+    padding-bottom: 8em;
+    border-radius: 25px;
+    padding-top: 2em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+    display: inline;
+}
+.btn-toolbar{
+    margin-left: 560px;
+}
+
+.btn-primary{
+    color: #FFEB00;
+    background-color: #C80000;
+    border-radius: 20px;
+}
+.bg-light{
+    background-color: yellow !important;
+}
+
+input{
+    padding-left: 1em; 
+    border-radius: 20px;
+}
+
+.custom-select{
+    width: 30%;
+}
+.my_class{
+    background-color: white;
+}
+#heroInfo{
+    margin-left: 0px;
+}
+
