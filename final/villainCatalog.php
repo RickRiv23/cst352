@@ -28,36 +28,38 @@
         <link href="css/styles.css" rel="stylesheet" type="text/css" /> 
         <script>
             $(document).ready(function(){
-                    $('.villImg').click(function(){
-                        alert( $(this).attr("id") );
+                $('.villImg').click(function(){
                     
-                        $('#villInfoModal').modal("show");
+                
+                    $('#villInfoModal').modal("show");
                     
-                        $.ajax({
-                                
-                            type: "GET",
-                            url: "api/getVillInfo.php",
-                            dataType: "json",
-                            data: { "id": $(this).attr("id") },
-                            success: function(data,status) {
-                                // alert(data);
-                                $("#heroModalLabel").html(data.name);
-                                $("#realName").html(data.fullName);
-                                $("#gender").html(data.gender);
-                                $("#species").html(data.race);
-                                $("#power").html(data.powers);
-                                $("#universe").html(data.universe);
-                                $("#heroDescription").html(data.bio);
-                                $("#heroImg").attr("src", data.img);
-                               
-                            },
-                            complete: function(data,status) { //optional, used for debugging purposes
-                            //   alert(status);
-                            }
+                    // alert( $(this).attr("id") );
+                    
+                    $.ajax({
                             
-                        });//ajax
-                    }); 
-              });
+                        type: "GET",
+                        url: "api/getVillainInfo.php",
+                        dataType: "json",
+                        data: { "id": $(this).attr("id") },
+                        success: function(data,status) {
+                            // alert(data);
+                            $("#villName").html(data.name);
+                            $("#realName").html(data.fullName);
+                            $("#gender").html(data.gender);
+                            $("#species").html(data.race);
+                            $("#power").html(data.powers);
+                            $("#universe").html(data.universe);
+                            $("#heroDescription").html(data.bio);
+                            $("#heroImg").attr("src", data.img);
+                           
+                        },
+                        complete: function(data,status) { //optional, used for debugging purposes
+                            alert(status);
+                        }
+                        
+                    });//ajax
+                }); 
+            });
         </script>
         
         <style>
@@ -85,7 +87,10 @@
             }
         </style>
     </head>
-    <body >
+    <body>
+        
+        <!--<script type="text/javascript" src="inc/villains.js"></script>-->
+        
     <div id="container">
         <div class="container-b">
         <div class="nav-container">
