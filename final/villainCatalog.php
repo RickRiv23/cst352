@@ -106,7 +106,7 @@
         </div>
         
         <div class="jumbotron jumbotron-fluid">
-            <h1>SUPERHERO INDEX</h1>
+            <h1>VILLAIN INDEX</h1>
             <h4>Catalog</h4>
         </div>  
         <div id="catalog">
