@@ -31,7 +31,7 @@
                       $('#feedback2').html("Wrong");
                   }
                   //alert(score);
-                  $("#totalScore").html("The total Score is: "+score);
+                  $("#totalScore").html("The total Score is: " + score);
                   
                    $.ajax({
             
@@ -70,9 +70,19 @@
         <style type="text/css">
             body{
                 text-align:center;
+                background: rgba(0,0,0,0.8);
+                color: white;
             }
             form{
                 margin: 20% auto;
+            }
+            h3{
+                color: orange;
+            }
+            input{
+                border-radius: 10px;
+                opacity: 0.7;
+                margin: 5px;
             }
         </style>
         <title>quiz</title>
@@ -94,15 +104,14 @@
             <span id="feedback1"></span> </br><br>
             
             What is the capital of California?
-             <input type="text" name="" id="q2"/> <br>
-             <span id="feedback2"></span> </br><br>
+            <input type="text" name="" id="q2"/> <br>
+            <span id="feedback2"></span> </br><br>
+            
+            <h3 id="totalScore"></h3>
+            <h3 id="prevScore"></h3>
+            <h3 id="totalAttempts"></h3>
              
-             <h3 id="totalScore"></h3>
-             
-             <h3 id="prevScore"></h3>
-             
-             <h3 id="totalAttempts"></h3>
-             <input type="button" id="btnSubmit" value="Submit"> 
+            <input type="button" id="btnSubmit" value="Submit"> 
         </form>
     
     </body>
