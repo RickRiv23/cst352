@@ -3,15 +3,10 @@ html {
   font-family: cheap-pine-sans, sans-serif;
   font-style: normal;
   font-weight: 400;
-  height: 400vh;
   background-color: white;
 }
 
-body {
-  text-align: center;
-  height: 100%;
-  margin: -20px;
-  padding-top: 40px;
+.home {
   background: url("http://dev-rrivera-cst351-f18.pantheonsite.io/wp-content/uploads/2018/10/DSC_5789.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -19,11 +14,26 @@ body {
   background-size: cover;
 }
 
+.project1 {
+  background: url("http://dev-rrivera-cst351-f18.pantheonsite.io/wp-content/uploads/2018/12/DSC_8376.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  text-align: center;
+  margin: -20px;
+  padding-top: 40px;
+}
+
 body .border {
   border: 1px solid white;
   width: 90%;
-  height: 100%;
   margin: -10px auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 2vw;
 }
 
 h1 {
@@ -120,6 +130,47 @@ a:visited {
   top: 8vh;
 }
 
+.projects {
+  height: 30%;
+}
+
+.projects__container {
+  padding: 100px;
+  text-align: left;
+  color: white;
+  width: 50%;
+  position: absolute;
+}
+
+.projects__container--1 {
+  top: 232vh;
+  left: 0vw;
+}
+
+.projects__container--2 {
+  top: 257vh;
+  right: -2vw;
+}
+
+.projects__container--3 {
+  top: 302vh;
+  left: 23vw;
+}
+
+.projects img:hover {
+  -webkit-transform: scale(1.125);
+          transform: scale(1.125);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.projects #project1, .projects #project2, .projects #project3 {
+  height: 20vh;
+  width: 20vw;
+}
+
 .container--text {
   padding: 100px;
   text-align: left;
@@ -127,17 +178,70 @@ a:visited {
   position: absolute;
   width: 50%;
   height: 500px;
-  top: 130%;
 }
 
-.container--text-about {
+.container--about {
   background-image: url("http://dev-rrivera-cst351-f18.pantheonsite.io/wp-content/uploads/2018/12/prj1_divs-about.svg");
   background-repeat: no-repeat;
 }
 
-.container--text-left {
+.container--back {
+  background-image: url("http://dev-rrivera-cst351-f18.pantheonsite.io/wp-content/uploads/2018/12/prj1_divs-background.svg");
+  background-repeat: no-repeat;
+}
+
+.container--center {
   background-image: url("http://dev-rrivera-cst351-f18.pantheonsite.io/wp-content/uploads/2018/12/prj1_divs-center.svg");
   background-repeat: no-repeat;
+}
+
+.container--content {
+  background-image: url("http://dev-rrivera-cst351-f18.pantheonsite.io/wp-content/uploads/2018/12/prj1_divs-content.svg");
+  background-repeat: no-repeat;
+  margin-bottom: 10vw;
+}
+
+.content {
+  text-align: left;
+  height: 23vw;
+  display: block;
+  background-position: center;
+  padding: 5px;
+}
+
+.content--wrapper {
+  width: 100%;
+  margin: 0px auto;
+  padding: 1vw;
+}
+
+.content p {
+  position: relative;
+  text-align: left;
+  width: 40%;
+  color: white;
+  left: 17vw;
+  top: -2vw;
+  font-size: 1.2vw;
+}
+
+.content__img--wrapper {
+  width: 12vw;
+  position: relative;
+  left: 60vw;
+  top: -15vw;
+}
+
+.content__title {
+  position: relative;
+  left: 3vw;
+  top: 0vw;
+}
+
+.btn--home {
+  position: fixed;
+  left: 5vw;
+  font-size: 5vh;
 }
 
 footer {
