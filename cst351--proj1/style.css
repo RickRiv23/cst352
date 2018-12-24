@@ -12,6 +12,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 265vw;
 }
 
 .project1 {
@@ -167,8 +168,12 @@ a:visited {
 }
 
 .projects #project1, .projects #project2, .projects #project3 {
-  height: 20vh;
-  width: 20vw;
+  width: 50vw;
+}
+
+.projects a {
+  position: absolute;
+  top: 2vw;
 }
 
 .container--text {
@@ -218,7 +223,8 @@ a:visited {
 .content p {
   position: relative;
   text-align: left;
-  width: 40%;
+  width: 45%;
+  height: 10vw;
   color: white;
   left: 17vw;
   top: -2vw;
@@ -226,7 +232,7 @@ a:visited {
 }
 
 .content__img--wrapper {
-  width: 12vw;
+  height: 16vw;
   position: relative;
   left: 60vw;
   top: -15vw;
@@ -242,6 +248,7 @@ a:visited {
   position: fixed;
   left: 5vw;
   font-size: 5vh;
+  text-align: left;
 }
 
 footer {
