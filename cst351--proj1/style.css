@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://use.typekit.net/iqq1dvc.css");
 html {
   font-family: cheap-pine-sans, sans-serif;
@@ -17,6 +18,14 @@ html {
 
 .project1 {
   background: url("http://dev-rrivera-cst351-f18.pantheonsite.io/wp-content/uploads/2018/12/DSC_8376.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.project2 {
+  background: url("http://dev-rrivera-cst351-f18.pantheonsite.io/wp-content/uploads/2018/10/BB1I5121–Film03.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
